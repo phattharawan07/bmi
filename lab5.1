@@ -1,7 +1,11 @@
-def rectangle(width, long):
-    area = width *  long
-    return area
+#bmi = น้ำหนัก / ส่วนสูง (m)**2
+#input = น้ำหนัก, ส่วนสูง
+#process สูตรหา bmi
+#output = bmi
+def bmi(kg, cm):
+    BMI = kg/(cm/100)**2
+    return BMI
 
-w = int(input("กว้าง:"))
-l = int(input("ยาว:"))
-print("พื้นที่สี่เหลี่ยม %d " % rectangle(w,l))
+kg = int(input("น้ำหนัก"))
+cm = int(input("ส่วนสูง"))
+print ("BMI %.2f" % bmi(kg , cm))    
