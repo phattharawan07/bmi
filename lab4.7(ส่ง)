@@ -1,0 +1,9 @@
+#หาพื้นที่วงกลม
+def circle(r):
+    area = 22/7*(r**2)
+     #print("พื้นที่วงกลม %.2f" % area)
+    return area
+
+print("พื้นที่วงกลม %.2f" % circle(2))
+print("พื้นที่วงกลม %.2f" % circle(10))
+      
