@@ -1,0 +1,185 @@
+Microsoft Windows [Version 10.0.22631.3880]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Windows\System32>py -V
+Python 3.12.4
+
+C:\Windows\System32>cd..
+
+C:\Windows>cd\
+
+C:\>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 9A58-199E
+
+ Directory of C:\
+
+04/02/2024  01:00 PM    <DIR>          Autodesk
+02/20/2024  03:53 PM    <DIR>          Certiport
+08/21/2024  10:15 AM    <DIR>          creammmmmmmm
+08/07/2023  11:48 AM    <DIR>          ESD
+08/21/2024  10:26 AM    <DIR>          myworld
+05/07/2022  12:24 PM    <DIR>          PerfLogs
+08/21/2024  09:43 AM    <DIR>          Program Files
+06/24/2024  08:45 AM    <DIR>          Program Files (x86)
+12/19/2023  03:14 PM    <DIR>          SWSetup
+08/07/2023  09:44 AM    <DIR>          system.sav
+08/08/2023  11:53 AM    <DIR>          Users
+08/21/2024  11:31 AM    <DIR>          web_cream
+08/07/2024  12:27 PM    <DIR>          Windows
+08/04/2023  03:06 PM    <DIR>          xampp
+               0 File(s)              0 bytes
+              14 Dir(s)  335,158,046,720 bytes free
+
+C:\>cd web_cream
+
+C:\web_cream>py -m venv myworld
+
+C:\web_cream>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 9A58-199E
+
+ Directory of C:\web_cream
+
+08/21/2024  11:31 AM    <DIR>          .
+08/21/2024  11:31 AM    <DIR>          myworld
+               0 File(s)              0 bytes
+               2 Dir(s)  335,598,260,224 bytes free
+
+C:\web_cream>myworld\Scripts\activate.bat
+
+(myworld) C:\web_cream>py -m pip install Django
+Collecting Django
+  Downloading Django-5.1-py3-none-any.whl.metadata (4.2 kB)
+Collecting asgiref<4,>=3.8.1 (from Django)
+  Downloading asgiref-3.8.1-py3-none-any.whl.metadata (9.3 kB)
+Collecting sqlparse>=0.3.1 (from Django)
+  Downloading sqlparse-0.5.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting tzdata (from Django)
+  Downloading tzdata-2024.1-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading Django-5.1-py3-none-any.whl (8.2 MB)
+   ---------------------------------------- 8.2/8.2 MB 22.0 MB/s eta 0:00:00
+Downloading asgiref-3.8.1-py3-none-any.whl (23 kB)
+Downloading sqlparse-0.5.1-py3-none-any.whl (44 kB)
+   ---------------------------------------- 44.2/44.2 kB 2.1 MB/s eta 0:00:00
+Downloading tzdata-2024.1-py2.py3-none-any.whl (345 kB)
+   ---------------------------------------- 345.4/345.4 kB 20.9 MB/s eta 0:00:00
+Installing collected packages: tzdata, sqlparse, asgiref, Django
+Successfully installed Django-5.1 asgiref-3.8.1 sqlparse-0.5.1 tzdata-2024.1
+
+[notice] A new release of pip is available: 24.0 -> 24.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(myworld) C:\web_cream>django-admin startproject my_tennis_club
+
+(myworld) C:\web_cream>cd myweb
+
+(myworld) C:\web_cream\myweb>py manage.py runserver
+Traceback (most recent call last):
+  File "C:\web_cream\myworld\Lib\site-packages\django\core\management\base.py", line 413, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "C:\web_cream\myworld\Lib\site-packages\django\core\management\commands\runserver.py", line 75, in execute
+    super().execute(*args, **options)
+  File "C:\web_cream\myworld\Lib\site-packages\django\core\management\base.py", line 459, in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\web_cream\myworld\Lib\site-packages\django\core\management\commands\runserver.py", line 82, in handle
+    if not settings.DEBUG and not settings.ALLOWED_HOSTS:
+           ^^^^^^^^^^^^^^
+  File "C:\web_cream\myworld\Lib\site-packages\django\conf\__init__.py", line 81, in __getattr__
+    self._setup(name)
+  File "C:\web_cream\myworld\Lib\site-packages\django\conf\__init__.py", line 68, in _setup
+    self._wrapped = Settings(settings_module)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\web_cream\myworld\Lib\site-packages\django\conf\__init__.py", line 166, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'my_tennis_club'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\web_cream\myweb\manage.py", line 22, in <module>
+    main()
+  File "C:\web_cream\myweb\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\web_cream\myworld\Lib\site-packages\django\core\management\__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "C:\web_cream\myworld\Lib\site-packages\django\core\management\__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "C:\web_cream\myworld\Lib\site-packages\django\core\management\base.py", line 426, in run_from_argv
+    connections.close_all()
+  File "C:\web_cream\myworld\Lib\site-packages\django\utils\connection.py", line 84, in close_all
+    for conn in self.all(initialized_only=True):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\web_cream\myworld\Lib\site-packages\django\utils\connection.py", line 76, in all
+    return [
+           ^
+  File "C:\web_cream\myworld\Lib\site-packages\django\utils\connection.py", line 73, in __iter__
+    return iter(self.settings)
+                ^^^^^^^^^^^^^
+  File "C:\web_cream\myworld\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\web_cream\myworld\Lib\site-packages\django\utils\connection.py", line 45, in settings
+    self._settings = self.configure_settings(self._settings)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\web_cream\myworld\Lib\site-packages\django\db\utils.py", line 148, in configure_settings
+    databases = super().configure_settings(databases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\web_cream\myworld\Lib\site-packages\django\utils\connection.py", line 50, in configure_settings
+    settings = getattr(django_settings, self.settings_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\web_cream\myworld\Lib\site-packages\django\conf\__init__.py", line 81, in __getattr__
+    self._setup(name)
+  File "C:\web_cream\myworld\Lib\site-packages\django\conf\__init__.py", line 68, in _setup
+    self._wrapped = Settings(settings_module)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\web_cream\myworld\Lib\site-packages\django\conf\__init__.py", line 166, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'my_tennis_club'
+
+(myworld) C:\web_cream\myweb>py manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+August 21, 2024 - 12:26:00
+Django version 5.1, using settings 'my_tennis_club.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+[21/Aug/2024 12:26:16] "GET / HTTP/1.1" 200 12068
+Not Found: /favicon.ico
+[21/Aug/2024 12:26:16] "GET /favicon.ico HTTP/1.1" 404 2216
+
+(myworld) C:\web_cream\myweb>py manage.py startapp members
+
+(myworld) C:\web_cream\myweb>
+
+
+
